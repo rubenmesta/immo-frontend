@@ -1,0 +1,14 @@
+{
+  "name": "immo-capstone",
+  "version": "1.0.0",
+  "description": "immo capstone project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ruben Mesta",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
