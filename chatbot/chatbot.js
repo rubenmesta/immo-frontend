@@ -48,7 +48,7 @@ module.exports = {
                 event: {
                     name: event,
                     parameters: struct.encode(parameters),
-                    languageCode: languageCode,
+                    languageCode: config.dialogFlowSessionLanguageCode,
                 },
             },
         };
