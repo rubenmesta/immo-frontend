@@ -4,16 +4,16 @@ const config = require('../config/keys');
 const {struct} = require('pb-util');
 
 const projectId = config.googleProjectID;
-const sessionId = config.dialogFlowSessionID;
-const languageCode = config.dialogFlowSessionLanguageCode;
+// const sessionId = config.dialogFlowSessionID;
+// const languageCode = config.dialogFlowSessionLanguageCode;
 
 const credentials = {
     client_email: config.googleClientEmail,
     private_key: config.googlePrivateKey,
 };
 
-const sessionClient = new dialogflow.SessionsClient(projectId, credentials);
-const sessionPath = sessionClient.sessionPath(projectId, sessionId);
+const sessionClient = new dialogflow.SessionsClient( {projectId, credentials});
+const sessionPath = sessionClient.sessionPath(config.googleProjectID, config.dialogFlowSessionID);
 
 
 module.exports = {
@@ -24,7 +24,7 @@ module.exports = {
             queryInput: {
                 text: {
                     text: text,
-                    languageCode: languageCode,
+                    languageCode: config.dialogFlowSessionLanguageCode,
                 },
             },
             queryParams: {
