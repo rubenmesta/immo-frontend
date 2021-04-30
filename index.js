@@ -1,18 +1,15 @@
 const express = require('express');
-//const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const path = require("path");
 
 const app = express();
 
-app.use(express.json()); 
+// app.use(express.json()); 
+app.use(bodyParser.json())
 
 const PORT = process.env.PORT || 5000;
 
-app.get('/', (req, res) => {
-    res.send({ 'hello': 'there'})
-});
-
-// require('./routes/dialogFlowRoutes')(app);
+require('./routes/dialogFlowRoutes')(app);
 
 // ... other app.use middleware 
 // app.use(express.static(path.join(__dirname, "client", "build")))
