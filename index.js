@@ -9,7 +9,7 @@ const cors = require('cors')
 app.use(express.json()); 
 // app.use(bodyParser.json());
 
-const whitelist = ['http://localhost:3000', 'http://localhost:5000', 'https://harvard-capstone.herokuapp.com/', 'https://harvard-capstone.herokuapp.com/api/df_text_query', 'https://harvard-capstone.herokuapp.com/api/df_event_query']
+const whitelist = 'https://harvard-capstone.herokuapp.com/';
 const corsOptions = {
   origin: function (origin, callback) {
     console.log("** Origin of request " + origin)
@@ -24,7 +24,7 @@ const corsOptions = {
 }
 app.use(helmet())
 // --> Add this
-app.use(cors(corsOptions))
+app.use(cors(whitelist))
 
 
 const PORT = process.env.PORT || 5000;
