@@ -205,20 +205,20 @@ class Chatbot extends Component {
             <ChatbotWrapper id="chatbot">
             <div>Chat here</div>
             <div className="chat-launcher">
-                   <img className={"open-icon"} src={launcherIconActive} />
-                    <img className={"closed-icon"} src={launcherIcon} />
+                   <img className={"open-icon"} src={launcherIconActive} alt="open" />
+                    <img className={"closed-icon"} src={launcherIcon} alt="close icon"/>
             </div>
             <div className={`chat-launcher ${this.state.showBot ? "opened" : "closed"}`}
                 onClick={this.handleToggle}>
-                   <img className={"open-icon"} src={launcherIconActive} />
-                    <img className={"closed-icon"} src={launcherIcon} />
+                   <img className={"open-icon"} src={launcherIconActive} alt="open" />
+                    <img className={"closed-icon"} src={launcherIcon} alt="close icon"/>
             </div>
            
             <div className={`chat-window ${this.state.showBot ? "opened" : "closed"}`}>
                 <div className="chat-header">
                     <h2 className="chat-header-title">Agent Dash</h2>
                     <a className="chat-header-close-button" onClick={this.hide}>
-                        <img className={"close-icon"} src={closeIcon} />
+                        <img className={"close-icon"} src={closeIcon} alt="close icon"/>
                     </a>
                 </div>
                 
