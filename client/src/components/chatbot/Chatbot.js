@@ -51,8 +51,9 @@ class Chatbot extends Component {
                 }
             }
         }
+
         this.setState({ messages: [...this.state.messages, says]});
-        const res = await axios.post('https://harvard-capstone.herokuapp.com/api/df_text_query', { headers: { accept: "Accept: application/json" } }, {text: queryText, userID: cookies.get('userID')});
+        const res = await axios.post('https://harvard-capstone.herokuapp.com/api/df_text_query', { crossdomain: true }, {text: queryText, userID: cookies.get('userID')});
 
         for (let msg of res.data.fulfillmentMessages) {
             //console.log(JSON.stringify(msg));
@@ -67,7 +68,7 @@ class Chatbot extends Component {
 
     async df_event_query(eventName) {
 
-        const res = await axios.post('https://harvard-capstone.herokuapp.com/api/df_event_query',  { headers: { accept: "Accept: application/json" } }, {event: eventName, userID: cookies.get('userID')});
+        const res = await axios.post('https://harvard-capstone.herokuapp.com/api/df_event_query', { crossdomain: true }, {event: eventName, userID: cookies.get('userID')});
 
         for (let msg of res.data.fulfillmentMessages) {
             let says = {
